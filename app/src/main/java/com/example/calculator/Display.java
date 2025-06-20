@@ -6,7 +6,7 @@ public interface Display {
 
     // setter
     void setTextDisplay(String textDisplay);
-
+    void clearDisplay(); // method: clear display
     // wrap method
     void callUpdateDisplay();
 }

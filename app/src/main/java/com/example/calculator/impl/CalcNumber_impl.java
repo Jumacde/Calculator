@@ -5,6 +5,7 @@ import com.example.calculator.CalcNumber;
 public class CalcNumber_impl implements CalcNumber {
     private String inputNum; // input number. String: to input a number after input another one. ex: 11, 23
     private double storedNum; // already inputted number.
+    private boolean isInput; // input state. true => allow input, false => reject input
 
     public CalcNumber_impl() {
         this.inputNum = "0";
@@ -22,15 +23,25 @@ public class CalcNumber_impl implements CalcNumber {
         return storedNum;
     }
 
+    @Override
+    public boolean getIsInput() {
+        return isInput;
+    }
+
     // setter
     @Override
-    public void setInputNum() {
+    public void setInputNum(String inputNum) {
         this.inputNum = inputNum;
     }
 
     @Override
-    public void setStoredNum() {
+    public void setStoredNum(double storedNum) {
         this.storedNum = storedNum;
+    }
+
+    @Override
+    public void setIsInput(boolean isInput) {
+        this.isInput = isInput;
     }
 
     /**

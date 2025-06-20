@@ -5,7 +5,7 @@ import com.example.calculator.CalcOperator;
 public class CalcOperator_impl implements CalcOperator {
     private String operator;
     public CalcOperator_impl() {
-
+        this.operator = "";
     }
 
     // getter

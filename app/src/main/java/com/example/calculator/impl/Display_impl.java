@@ -1,12 +1,18 @@
 package com.example.calculator.impl;
 
+import com.example.calculator.CalcNumber;
+import com.example.calculator.CalcOperator;
 import com.example.calculator.Display;
 
 public class Display_impl implements Display {
     private String textDisplay;
+    private final CalcNumber calcNumber;
+    private final CalcOperator calcOperator;
 
-    public Display_impl() {
-
+    public Display_impl(CalcNumber calcNumber, CalcOperator calcOperator) {
+        this.calcNumber = calcNumber;
+        this.calcOperator = calcOperator;
+        clearDisplay();
     }
 
     @Override
@@ -17,6 +23,16 @@ public class Display_impl implements Display {
     @Override
     public void setTextDisplay(String textDisplay) {
         this.textDisplay = textDisplay;
+    }
+
+    // method: clear display
+    @Override
+    public void clearDisplay() {
+        this.textDisplay = "0";
+        this.calcNumber.setInputNum("0");
+        this.calcNumber.setStoredNum(0);
+
+
     }
 
     @Override

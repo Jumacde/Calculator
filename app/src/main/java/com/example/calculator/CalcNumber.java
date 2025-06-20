@@ -3,8 +3,10 @@ package com.example.calculator;
 public interface CalcNumber {
     String getInputNum();
     double getStoredNum();
-    void setInputNum();
-    void setStoredNum();
+    boolean getIsInput();
+    void setInputNum(String inputNum);
+    void setStoredNum(double storedNum);
+    void setIsInput(boolean isInput);
 
     // wrap methods
     void callDoCalc(String operator);
