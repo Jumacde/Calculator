@@ -24,11 +24,11 @@ public class CalcOperator_impl implements CalcOperator {
      * wrap method
      * **/
     @Override
-    public void callOperatorButton() {
-        operatorButton();
+    public void callOperatorButton(String op) {
+        clickOperatorButton(op);
     }
 
-    private void operatorButton() {
+    private void clickOperatorButton(String op) {
 
     }
 

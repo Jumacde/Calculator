@@ -10,5 +10,5 @@ public interface CalcNumber {
 
     // wrap methods
     void callDoCalc(String operator);
-    void callNumberButton();
+    void callNumberButton(String num);
 }

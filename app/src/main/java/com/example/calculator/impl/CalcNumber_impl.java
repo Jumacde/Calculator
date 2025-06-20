@@ -59,15 +59,15 @@ public class CalcNumber_impl implements CalcNumber {
      * wrap method
      * **/
     @Override
-    public void callNumberButton() {
-        numberButton();
+    public void callNumberButton(String num) {
+        clickNumberButton(num);
     }
 
     private void doCalc(String operator) {
 
     }
 
-    private void numberButton() {
+    private void clickNumberButton(String num) {
 
     }
 

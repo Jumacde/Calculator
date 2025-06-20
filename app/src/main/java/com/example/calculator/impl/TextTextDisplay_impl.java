@@ -36,9 +36,16 @@ public class TextTextDisplay_impl implements TextDisplay {
     }
 
     @Override
+    public void callAcButton() {
+
+    }
+
+    @Override
     public void callUpdateDisplay() {
         updateDisplay();
     }
+
+    private void clickAcButton() {}
 
     private void updateDisplay() {
 
