@@ -19,17 +19,4 @@ public class CalcOperator_impl implements CalcOperator {
     public void setOperator(String operator) {
         this.operator = operator;
     }
-
-    /**
-     * wrap method
-     * **/
-    @Override
-    public void callOperatorButton(String op) {
-        clickOperatorButton(op);
-    }
-
-    private void clickOperatorButton(String op) {
-
-    }
-
 }

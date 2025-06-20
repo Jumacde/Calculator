@@ -4,22 +4,20 @@ import com.example.calculator.CalcNumber;
 import com.example.calculator.CalcOperator;
 
 public class CalcNumber_impl implements CalcNumber {
-    private String inputNum; // input number. String: to input a number after input another one. ex: 11, 23
+    private String currentNum; // input number. String: to input a number after input another one. ex: 11, 23
     private double storedNum; // already inputted number.
     private boolean isInput; // input state. true => allow input, false => reject input
-    private final CalcOperator calcOperator;
 
-    public CalcNumber_impl(CalcOperator calcOperator) {
-        this.calcOperator = calcOperator;
-        this.inputNum = "0";
+    public CalcNumber_impl() {
+        this.currentNum = "0";
         this.storedNum = 0;
         this.isInput = false;
     }
 
     // getter
     @Override
-    public String getInputNum() {
-        return inputNum;
+    public String getCurrentNum() {
+        return currentNum;
     }
 
     @Override
@@ -34,8 +32,8 @@ public class CalcNumber_impl implements CalcNumber {
 
     // setter
     @Override
-    public void setInputNum(String inputNum) {
-        this.inputNum = inputNum;
+    public void setCurrentNum(String currentNum) {
+        this.currentNum = currentNum;
         this.isInput = true;
     }
 
@@ -59,25 +57,9 @@ public class CalcNumber_impl implements CalcNumber {
         doCalc(calcOperator);
     }
 
-    /**
-     * wrap method
-     * **/
-    @Override
-    public void callNumberButton(String num) {
-        clickNumberButton(num);
-    }
 
     private void doCalc(CalcOperator calcOperator) {
         String operator = calcOperator.getOperator();
-
-    }
-
-    private void clickNumberButton(String num) {
-        String operator = calcOperator.getOperator();
-
-        while (isInput) {
-
-        }
 
     }
 

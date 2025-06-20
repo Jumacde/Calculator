@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.calculator.impl.ButtonController_impl;
 import com.example.calculator.impl.CalcNumber_impl;
 import com.example.calculator.impl.CalcOperator_impl;
 import com.example.calculator.impl.TextTextDisplay_impl;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private CalcNumber calcNumber;
     private CalcOperator calcOperator;
     private TextDisplay textDisplay;
+    private ButtonController buttonController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         // instance
-        calcNumber = new CalcNumber_impl(calcOperator);
+        calcNumber = new CalcNumber_impl();
         calcOperator = new CalcOperator_impl();
         textDisplay = new TextTextDisplay_impl(calcNumber, calcOperator);
+        buttonController = new ButtonController_impl(calcNumber, calcOperator, textDisplay);
 
         textView = findViewById(R.id.text);
         setUpButtons(R.id.b00, "00" ,"");
@@ -63,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calcNumber.callNumberButton(num);
-                calcOperator.callOperatorButton(op);
-                textDisplay.callAcButton();
+                buttonController.callNumberButton(num);
+                buttonController.callOperatorButton(op);
+                buttonController.callAcButton();
             }
         });
 

@@ -1,14 +1,13 @@
 package com.example.calculator;
 
 public interface CalcNumber {
-    String getInputNum();
+    String getCurrentNum();
     double getStoredNum();
     boolean getIsInput();
-    void setInputNum(String inputNum);
+    void setCurrentNum(String currentNum);
     void setStoredNum(double storedNum);
     void setIsInput(boolean isInput);
 
     // wrap methods
     void callDoCalc(CalcOperator calcOperator);
-    void callNumberButton(String num);
 }

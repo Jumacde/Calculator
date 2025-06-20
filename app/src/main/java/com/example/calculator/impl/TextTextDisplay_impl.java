@@ -29,15 +29,10 @@ public class TextTextDisplay_impl implements TextDisplay {
     @Override
     public void clearDisplay() {
         this.textDisplay = "0";
-        this.calcNumber.setInputNum("0");
+        this.calcNumber.setCurrentNum("0");
         this.calcNumber.setStoredNum(0);
         this.calcNumber.setIsInput(false);
         this.calcOperator.setOperator("");
-    }
-
-    @Override
-    public void callAcButton() {
-
     }
 
     @Override
@@ -45,7 +40,6 @@ public class TextTextDisplay_impl implements TextDisplay {
         updateDisplay();
     }
 
-    private void clickAcButton() {}
 
     private void updateDisplay() {
 

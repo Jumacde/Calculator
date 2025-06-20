@@ -6,5 +6,5 @@ public interface CalcOperator {
     // setter
     void setOperator(String operator);
     // wrap method
-    void callOperatorButton(String op);
+
 }
