@@ -7,8 +7,10 @@ public class CalcNumber_impl implements CalcNumber {
     private String inputNum; // input number. String: to input a number after input another one. ex: 11, 23
     private double storedNum; // already inputted number.
     private boolean isInput; // input state. true => allow input, false => reject input
+    private final CalcOperator calcOperator;
 
-    public CalcNumber_impl() {
+    public CalcNumber_impl(CalcOperator calcOperator) {
+        this.calcOperator = calcOperator;
         this.inputNum = "0";
         this.storedNum = 0;
         this.isInput = false;
@@ -34,6 +36,7 @@ public class CalcNumber_impl implements CalcNumber {
     @Override
     public void setInputNum(String inputNum) {
         this.inputNum = inputNum;
+        this.isInput = true;
     }
 
     @Override
@@ -70,6 +73,11 @@ public class CalcNumber_impl implements CalcNumber {
     }
 
     private void clickNumberButton(String num) {
+        String operator = calcOperator.getOperator();
+
+        while (isInput) {
+
+        }
 
     }
 

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         // instance
-        calcNumber = new CalcNumber_impl();
+        calcNumber = new CalcNumber_impl(calcOperator);
         calcOperator = new CalcOperator_impl();
         textDisplay = new TextTextDisplay_impl(calcNumber, calcOperator);
 
