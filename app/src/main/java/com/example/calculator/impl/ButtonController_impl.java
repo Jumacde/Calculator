@@ -36,19 +36,15 @@ public class ButtonController_impl implements ButtonController {
         String operator = calcOperator.getOperator();
         boolean isInput = calcNumber.getIsInput();
         String currentNum = calcNumber.getCurrentNum();
+        calcNumber.setIsInput(true);
 
-        while (isInput) {
-            if (currentNum.isEmpty() || operator.isEmpty()) { // if you input still nothing.
-                calcNumber.setCurrentNum(num); // input num
-            } else if (operator.equals("=")) {
+        if (currentNum.isEmpty() || operator.isEmpty()) { // if you input still nothing.
+            calcNumber.setCurrentNum(num); // input num
+        } else if (!currentNum.isEmpty() && operator.equals("=")) {
 
-                calcNumber.setIsInput(false);
-
-
-            }
         }
-    }
 
+    }
 
     private void clickOperatorButton(String op){
 
