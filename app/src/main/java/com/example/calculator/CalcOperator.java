@@ -1,4 +1,4 @@
 package com.example.calculator;
 
-public interface Operator {
+public interface CalcOperator {
 }
