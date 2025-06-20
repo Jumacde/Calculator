@@ -2,14 +2,14 @@ package com.example.calculator.impl;
 
 import com.example.calculator.CalcNumber;
 import com.example.calculator.CalcOperator;
-import com.example.calculator.Display;
+import com.example.calculator.TextDisplay;
 
-public class Display_impl implements Display {
+public class TextTextDisplay_impl implements TextDisplay {
     private String textDisplay;
     private final CalcNumber calcNumber;
     private final CalcOperator calcOperator;
 
-    public Display_impl(CalcNumber calcNumber, CalcOperator calcOperator) {
+    public TextTextDisplay_impl(CalcNumber calcNumber, CalcOperator calcOperator) {
         this.calcNumber = calcNumber;
         this.calcOperator = calcOperator;
         clearDisplay(); // initialize display.

@@ -1,6 +1,6 @@
 package com.example.calculator;
 
-public interface Display {
+public interface TextDisplay {
     // getter
     String getTextDisplay();
 
