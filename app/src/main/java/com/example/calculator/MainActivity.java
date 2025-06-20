@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         setUpButtons(R.id.min, "", "-");
         setUpButtons(R.id.mul, "", "*");
         setUpButtons(R.id.div, "", "/");
+
+        setUpButtons(R.id.equal, "", "=");
+        setUpButtons(R.id.ac, "","");
     }
 
     /**
