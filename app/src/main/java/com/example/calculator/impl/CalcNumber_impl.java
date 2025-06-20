@@ -10,6 +10,7 @@ public class CalcNumber_impl implements CalcNumber {
     public CalcNumber_impl() {
         this.inputNum = "0";
         this.storedNum = 0;
+        this.isInput = false;
     }
 
     // getter

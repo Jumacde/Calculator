@@ -12,7 +12,7 @@ public class Display_impl implements Display {
     public Display_impl(CalcNumber calcNumber, CalcOperator calcOperator) {
         this.calcNumber = calcNumber;
         this.calcOperator = calcOperator;
-        clearDisplay();
+        clearDisplay(); // initialize display.
     }
 
     @Override
@@ -31,8 +31,8 @@ public class Display_impl implements Display {
         this.textDisplay = "0";
         this.calcNumber.setInputNum("0");
         this.calcNumber.setStoredNum(0);
-
-
+        this.calcNumber.setIsInput(false);
+        this.calcOperator.setOperator("");
     }
 
     @Override
