@@ -1,6 +1,7 @@
 package com.example.calculator.impl;
 
 import com.example.calculator.CalcNumber;
+import com.example.calculator.CalcOperator;
 
 public class CalcNumber_impl implements CalcNumber {
     private String inputNum; // input number. String: to input a number after input another one. ex: 11, 23
@@ -51,8 +52,8 @@ public class CalcNumber_impl implements CalcNumber {
      * - set a arithmetic operator(+, -, *, /)
      * **/
     @Override
-    public void callDoCalc(String operator) {
-        doCalc(operator);
+    public void callDoCalc(CalcOperator calcOperator) {
+        doCalc(calcOperator);
     }
 
     /**
@@ -63,7 +64,8 @@ public class CalcNumber_impl implements CalcNumber {
         clickNumberButton(num);
     }
 
-    private void doCalc(String operator) {
+    private void doCalc(CalcOperator calcOperator) {
+        String operator = calcOperator.getOperator();
 
     }
 

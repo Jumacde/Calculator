@@ -9,6 +9,6 @@ public interface CalcNumber {
     void setIsInput(boolean isInput);
 
     // wrap methods
-    void callDoCalc(String operator);
+    void callDoCalc(CalcOperator calcOperator);
     void callNumberButton(String num);
 }
