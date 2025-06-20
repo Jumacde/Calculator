@@ -6,5 +6,7 @@ public interface CalcNumber {
     void setInputNum();
     void setStoredNum();
 
-    void callDoCalc(String operator); // wrap method
+    // wrap methods
+    void callDoCalc(String operator);
+    void callNumberButton();
 }

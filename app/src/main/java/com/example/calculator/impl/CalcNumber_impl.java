@@ -43,7 +43,20 @@ public class CalcNumber_impl implements CalcNumber {
         doCalc(operator);
     }
 
+    /**
+     * wrap method
+     * **/
+    @Override
+    public void callNumberButton() {
+        numberButton();
+    }
+
     private void doCalc(String operator) {
 
     }
+
+    private void numberButton() {
+
+    }
+
 }
