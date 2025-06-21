@@ -61,6 +61,7 @@ public class CalcNumber_impl implements CalcNumber {
         String operator = calcOperator.getOperator();
         double cNum = Double.parseDouble(currentNum); // String currentNumber convert to double.
         double calcResult;
+        setIsInput(true);
         while(isInput) {
             if (operator.equals("+")) {
                 calcResult = storedNum + cNum;
