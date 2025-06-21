@@ -57,9 +57,23 @@ public class CalcNumber_impl implements CalcNumber {
         doCalc(calcOperator);
     }
 
-
     private void doCalc(CalcOperator calcOperator) {
         String operator = calcOperator.getOperator();
+        double cNum = Double.parseDouble(currentNum); // String currentNumber convert to double.
+        double calcResult;
+        while(isInput) {
+            if (operator.equals("+")) {
+                calcResult = storedNum + cNum;
+            } else if (operator.equals("-")) {
+                calcResult = storedNum - cNum;
+            } else if (operator.equals("*")) {
+                calcResult = storedNum * cNum;
+            } else if (operator.equals("/")) {
+                calcResult = storedNum / cNum;
+            } else {
+                return;
+            }
+        }
 
     }
 
