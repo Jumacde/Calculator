@@ -38,11 +38,13 @@ public class ButtonController_impl implements ButtonController {
         String currentNum = calcNumber.getCurrentNum();
         calcNumber.setIsInput(true);
 
+       /*
         if (currentNum.isEmpty() || operator.isEmpty()) { // if you input still nothing.
             calcNumber.setCurrentNum(num); // input num
         } else if (!currentNum.isEmpty() && operator.equals("=")) {
 
         }
+       * **/
 
     }
 

@@ -32,25 +32,25 @@ public class MainActivity extends AppCompatActivity {
         buttonController = new ButtonController_impl(calcNumber, calcOperator, textDisplay);
 
         textView = findViewById(R.id.text);
-        setUpButtons(R.id.b00, "00" ,"");
-        setUpButtons(R.id.b0, "0", "");
-        setUpButtons(R.id.b1, "1", "");
-        setUpButtons(R.id.b2, "2", "");
-        setUpButtons(R.id.b3, "3", "");
-        setUpButtons(R.id.b4, "4", "");
-        setUpButtons(R.id.b5, "5", "");
-        setUpButtons(R.id.b6, "6", "");
-        setUpButtons(R.id.b7, "7", "");
-        setUpButtons(R.id.b8, "8", "");
-        setUpButtons(R.id.b9, "9", "");
+        setUpNumbersButtons(R.id.b00, "00");
+        setUpNumbersButtons(R.id.b0, "0");
+        setUpNumbersButtons(R.id.b1, "1");
+        setUpNumbersButtons(R.id.b2, "2");
+        setUpNumbersButtons(R.id.b3, "3");
+        setUpNumbersButtons(R.id.b4, "4");
+        setUpNumbersButtons(R.id.b5, "5");
+        setUpNumbersButtons(R.id.b6, "6");
+        setUpNumbersButtons(R.id.b7, "7");
+        setUpNumbersButtons(R.id.b8, "8");
+        setUpNumbersButtons(R.id.b9, "9");
 
-        setUpButtons(R.id.plus, "", "+");
-        setUpButtons(R.id.min, "", "-");
-        setUpButtons(R.id.mul, "", "*");
-        setUpButtons(R.id.div, "", "/");
+        setUpOperatorsButtons(R.id.plus, "+");
+        setUpOperatorsButtons(R.id.min, "-");
+        setUpOperatorsButtons(R.id.mul, "*");
+        setUpOperatorsButtons(R.id.div, "/");
 
-        setUpButtons(R.id.equal, "", "=");
-        setUpButtons(R.id.ac, "","");
+        setUpEqualsButtons(R.id.equal);
+        setUpACsButtons(R.id.ac);
     }
 
     /**
@@ -61,16 +61,44 @@ public class MainActivity extends AppCompatActivity {
      *     - to choose a button from numbers- and operators buttons
      *     - the showing buttons by String. ex: num = "00" => button "00". op = "+" => button "+".
      * **/
-    private void setUpButtons(int bId, final String num, final String op) {
+    private void setUpNumbersButtons(int bId, final String num) {
         Button button = findViewById(bId);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 buttonController.callNumberButton(num);
-                buttonController.callOperatorButton(op);
-                buttonController.callAcButton();
             }
         });
-
     }
+
+    private void setUpOperatorsButtons(int bId, final String op) {
+        Button button = findViewById(bId);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonController.callOperatorButton(op);
+            }
+        });
+    }
+
+    private void setUpEqualsButtons(int bId) {
+        Button button = findViewById(bId);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
+
+    private void setUpACsButtons(int bId) {
+        Button button = findViewById(bId);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
+
 }
