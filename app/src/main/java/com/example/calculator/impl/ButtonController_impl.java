@@ -28,6 +28,11 @@ public class ButtonController_impl implements ButtonController {
     }
 
     @Override
+    public void callEqualsButton() {
+        clickEqualsButton();
+    }
+
+    @Override
     public void callAcButton() {
         clickAcButton();
     }
@@ -51,6 +56,8 @@ public class ButtonController_impl implements ButtonController {
     private void clickOperatorButton(String op){
 
     }
+
+    private void clickEqualsButton() {}
 
     private void clickAcButton() {}
 

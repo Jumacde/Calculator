@@ -53,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
         setUpACsButtons(R.id.ac);
     }
 
+    // method: update display
+    private void updateDisplay() {
+        textView.setText(textDisplay.getTextDisplay());
+    }
+
     /**
      * method: set up Numbers buttons
      * @ Param: int bId
@@ -67,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 buttonController.callNumberButton(num);
+                updateDisplay();
             }
         });
     }
@@ -77,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 buttonController.callOperatorButton(op);
+                updateDisplay();
             }
         });
     }
@@ -86,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                buttonController.callEqualsButton();
+                updateDisplay();
             }
         });
     }
@@ -96,7 +104,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                buttonController.callAcButton();
+                updateDisplay();
             }
         });
     }
