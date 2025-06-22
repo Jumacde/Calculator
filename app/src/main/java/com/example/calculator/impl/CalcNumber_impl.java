@@ -62,20 +62,25 @@ public class CalcNumber_impl implements CalcNumber {
         double cNum = Double.parseDouble(currentNum); // String currentNumber convert to double.
         double calcResult;
         setIsInput(true);
-        while(isInput) {
-            if (operator.equals("+")) {
-                calcResult = storedNum + cNum;
-            } else if (operator.equals("-")) {
-                calcResult = storedNum - cNum;
-            } else if (operator.equals("*")) {
-                calcResult = storedNum * cNum;
-            } else if (operator.equals("/")) {
-                calcResult = storedNum / cNum;
+        if (operator.isEmpty()) {
+            return;
+        } else if (operator.equals("+")) {
+            calcResult = storedNum + cNum;
+        } else if (operator.equals("-")) {
+            calcResult = storedNum - cNum;
+        } else if (operator.equals("*")) {
+            if (cNum == 0 || storedNum == 0) {
+                calcResult = 0;
             } else {
-                return;
+                calcResult = storedNum * cNum;
+            }
+        } else if (operator.equals("/")) {
+            if (cNum == 0 || storedNum == 0) {
+                calcResult = 0;
+            } else {
+                calcResult = storedNum / cNum;
             }
         }
-
     }
 
 }
