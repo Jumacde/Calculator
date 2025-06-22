@@ -4,12 +4,12 @@ import com.example.calculator.CalcNumber;
 import com.example.calculator.CalcOperator;
 import com.example.calculator.TextDisplay;
 
-public class TextTextDisplay_impl implements TextDisplay {
+public class TextDisplay_impl implements TextDisplay {
     private String textDisplay;
     private final CalcNumber calcNumber;
     private final CalcOperator calcOperator;
 
-    public TextTextDisplay_impl(CalcNumber calcNumber, CalcOperator calcOperator) {
+    public TextDisplay_impl(CalcNumber calcNumber, CalcOperator calcOperator) {
         this.calcNumber = calcNumber;
         this.calcOperator = calcOperator;
         clearDisplay(); // initialize display.

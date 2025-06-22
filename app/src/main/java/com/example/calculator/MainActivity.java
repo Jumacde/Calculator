@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.calculator.impl.ButtonController_impl;
 import com.example.calculator.impl.CalcNumber_impl;
 import com.example.calculator.impl.CalcOperator_impl;
-import com.example.calculator.impl.TextTextDisplay_impl;
+import com.example.calculator.impl.TextDisplay_impl;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         // instance
         calcNumber = new CalcNumber_impl();
         calcOperator = new CalcOperator_impl();
-        textDisplay = new TextTextDisplay_impl(calcNumber, calcOperator);
+        textDisplay = new TextDisplay_impl(calcNumber, calcOperator);
         buttonController = new ButtonController_impl(calcNumber, calcOperator, textDisplay);
 
         textView = findViewById(R.id.text);
