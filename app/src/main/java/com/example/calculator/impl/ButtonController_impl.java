@@ -49,15 +49,19 @@ public class ButtonController_impl implements ButtonController {
         calcNumber.setIsInput(true);
 
         if (operator.equals("=")) {
-            
+            calcNumber.setCurrentNum(num);
+            calcNumber.setStoredNum(0);
+            calcOperator.setOperator("");
+            calcNumber.setCalcResult(0);
+            textDisplay.setTextDisplay(currentNum);
+            return; 
         }
-       /*
-        if (currentNum.isEmpty() || operator.isEmpty()) { // if you input still nothing.
-            calcNumber.setCurrentNum(num); // input num
-        } else if (!currentNum.isEmpty() && operator.equals("=")) {
 
+        // if only 0 is on the display, ignored the input 0 or 00 again.
+        if (currentNum.equals("0") && (num.equals("0") || (num.equals("00")))) {
+            return;
         }
-       * **/
+
 
     }
 
