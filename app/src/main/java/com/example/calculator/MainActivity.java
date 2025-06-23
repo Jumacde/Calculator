@@ -53,18 +53,23 @@ public class MainActivity extends AppCompatActivity {
         setUpACsButtons(R.id.ac);
     }
 
+    /**
+     * method: update display.
+     * **/
     // method: update display
     private void updateDisplay() {
         textView.setText(textDisplay.getTextDisplay());
     }
 
     /**
-     * method: set up Numbers buttons
+     * method: set up numbers buttons
      * @ Param: int bId
      *     - every numbers buttons id on the apps xml. ex: bId = b00 => button "00".
-     * @ Param: final String num, final String op
-     *     - to choose a button from numbers- and operators buttons
+     * @ Param: final String num
+     *     - to choose a button from numbers buttons.
      *     - the showing buttons by String. ex: num = "00" => button "00". op = "+" => button "+".
+     * 1. call the number-buttons method via calling the wrap method "callNumberButton".
+     * 2. update display.
      * **/
     private void setUpNumbersButtons(int bId, final String num) {
         Button button = findViewById(bId);
@@ -77,6 +82,16 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * method: set up arithmetic operators buttons
+     * @ Param: int bId
+     *     - every numbers buttons id on the apps xml. ex: bId = plus => button "+".
+     * @ Param: final String op
+     *     - to choose a button from operators buttons.
+     *     - the showing buttons by String. ex: op = "+" => button "+".
+     * 1. call the arithmetic operator-buttons method via calling the wrap method "callOperatorButton".
+     * 2. update display.
+     * **/
     private void setUpOperatorsButtons(int bId, final String op) {
         Button button = findViewById(bId);
         button.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +103,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * method: set up the equal-button
+     * @ Param: int bId
+     *     - every numbers buttons id on the apps xml. ex: bId = equal => button "=".
+     * 1. call the equal-buttons method via calling the wrap method "callEqualsButton".
+     * 2. update display.
+     * **/
     private void setUpEqualsButtons(int bId) {
         Button button = findViewById(bId);
         button.setOnClickListener(new View.OnClickListener() {
@@ -99,6 +121,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * method: set up the AC-button
+     * @ Param: int bId
+     *     - every numbers buttons id on the apps xml. ex: bId = ac => button "AC".
+     * 1. call the AC(clear)-buttons method via calling the wrap method "callAcButton".
+     * 2. update display.
+     * **/
     private void setUpACsButtons(int bId) {
         Button button = findViewById(bId);
         button.setOnClickListener(new View.OnClickListener() {
