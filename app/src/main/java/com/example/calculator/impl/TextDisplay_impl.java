@@ -1,5 +1,7 @@
 package com.example.calculator.impl;
 
+import android.annotation.SuppressLint;
+
 import com.example.calculator.CalcNumber;
 import com.example.calculator.CalcOperator;
 import com.example.calculator.TextDisplay;
@@ -53,8 +55,33 @@ public class TextDisplay_impl implements TextDisplay {
         double cNum = Double.parseDouble(currentNum);
         double storedNum = calcNumber.getStoredNum();
         double calcResult = calcNumber.getCalcResult();
+        String operator = calcOperator.getOperator();
         boolean isInput = calcNumber.getIsInput();
 
+
+        if (textDisplay.equals("=")) {
+            textDisplay = formatNumber(calcResult);
+        } else if (!operator.isEmpty() && isInput) {
+            textDisplay = formatNumber(storedNum) + operator + formatNumber(cNum);
+        } else if (!operator.isEmpty() && !isInput) {
+            textDisplay = formatNumber(storedNum) + operator;
+        } else {
+            textDisplay = formatNumber(cNum);
+        }
+    }
+
+    /**
+     * - method: float number format to a integer
+     * @ param: double num
+     * - set each number(storedNumber)
+     * **/
+    @SuppressLint("DefaultLocale")
+    private String formatNumber(double num) {
+        if (num == (long) num) {
+            return String.format("%d", (long) num);
+        } else {
+            return String.format("%s", num);
+        }
     }
 
 }
