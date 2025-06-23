@@ -10,11 +10,13 @@ public class CalcNumber_impl implements CalcNumber {
     private String currentNum; // input number. String: to input a number after input another one. ex: 11, 23
     private double storedNum; // already inputted number.
     private boolean isInput; // input state. true => allow input, false => reject input
+    private double calcResult; // calculate result.
 
     public CalcNumber_impl() {
         this.currentNum = "0";
         this.storedNum = 0;
         this.isInput = false;
+        this.calcResult = 0;
     }
 
     // getter
@@ -33,6 +35,11 @@ public class CalcNumber_impl implements CalcNumber {
         return isInput;
     }
 
+    @Override
+    public double getCalcResult() {
+        return calcResult;
+    }
+
     // setter
     @Override
     public void setCurrentNum(String currentNum) {
@@ -48,6 +55,11 @@ public class CalcNumber_impl implements CalcNumber {
     @Override
     public void setIsInput(boolean isInput) {
         this.isInput = isInput;
+    }
+
+    @Override
+    public void setCalcResult(double calcResult) {
+        this.calcResult = calcResult;
     }
 
     /**
@@ -68,7 +80,7 @@ public class CalcNumber_impl implements CalcNumber {
     private void doCalc(CalcOperator calcOperator) {
         String operator = calcOperator.getOperator();
         double cNum = Double.parseDouble(currentNum); // String currentNumber convert to double.
-        double calcResult; // calculate result.
+
         setIsInput(true);
         if (operator.isEmpty()) {
             return;
