@@ -2,6 +2,9 @@ package com.example.calculator.impl;
 
 import com.example.calculator.CalcOperator;
 
+/**
+ * class: control the equal(=)- and arithmetic operators(+, -, *, /).
+ **/
 public class CalcOperator_impl implements CalcOperator {
     private String operator;
     public CalcOperator_impl() {

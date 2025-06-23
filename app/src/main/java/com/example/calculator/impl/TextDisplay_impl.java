@@ -4,6 +4,9 @@ import com.example.calculator.CalcNumber;
 import com.example.calculator.CalcOperator;
 import com.example.calculator.TextDisplay;
 
+/**
+ * class: control the showing displays.
+ * **/
 public class TextDisplay_impl implements TextDisplay {
     private String textDisplay;
     private final CalcNumber calcNumber;
@@ -35,12 +38,15 @@ public class TextDisplay_impl implements TextDisplay {
         this.calcOperator.setOperator("");
     }
 
+    /**
+     * wrap method: to use updateDisplay method.
+     * **/
     @Override
     public void callUpdateDisplay() {
         updateDisplay();
     }
 
-
+    // method: update display.
     private void updateDisplay() {
 
     }

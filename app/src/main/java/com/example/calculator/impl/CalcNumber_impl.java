@@ -3,6 +3,9 @@ package com.example.calculator.impl;
 import com.example.calculator.CalcNumber;
 import com.example.calculator.CalcOperator;
 
+/**
+* class: control the number and calculate rule.
+**/
 public class CalcNumber_impl implements CalcNumber {
     private String currentNum; // input number. String: to input a number after input another one. ex: 11, 23
     private double storedNum; // already inputted number.
