@@ -77,6 +77,8 @@ public class ButtonController_impl implements ButtonController {
 
     private void clickEqualsButton() {}
 
-    private void clickAcButton() {}
+    private void clickAcButton() {
+        textDisplay.clearDisplay();
+    }
 
 }

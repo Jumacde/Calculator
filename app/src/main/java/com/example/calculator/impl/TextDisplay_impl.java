@@ -10,7 +10,7 @@ import com.example.calculator.TextDisplay;
  * class: control the showing displays.
  * **/
 public class TextDisplay_impl implements TextDisplay {
-    private String textDisplay;
+    private String textDisplay; // any showing on the display.
     private final CalcNumber calcNumber;
     private final CalcOperator calcOperator;
 
@@ -50,7 +50,7 @@ public class TextDisplay_impl implements TextDisplay {
     }
 
     // method: update display.
-    private void updateDisplay() {
+    private String updateDisplay() {
         String currentNum = calcNumber.getCurrentNum();
         double cNum = Double.parseDouble(currentNum);
         double storedNum = calcNumber.getStoredNum();
@@ -58,15 +58,14 @@ public class TextDisplay_impl implements TextDisplay {
         String operator = calcOperator.getOperator();
         boolean isInput = calcNumber.getIsInput();
 
-
-        if (textDisplay.equals("=")) {
-            textDisplay = formatNumber(calcResult);
+        if (operator.equals("=")) { // show the calculate result on the display.
+            return formatNumber(calcResult);
         } else if (!operator.isEmpty() && isInput) {
-            textDisplay = formatNumber(storedNum) + operator + formatNumber(cNum);
+            return formatNumber(storedNum) + operator + formatNumber(cNum);
         } else if (!operator.isEmpty() && !isInput) {
-            textDisplay = formatNumber(storedNum) + operator;
+            return formatNumber(storedNum) + operator;
         } else {
-            textDisplay = formatNumber(cNum);
+            return formatNumber(cNum);
         }
     }
 
