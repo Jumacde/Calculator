@@ -35,6 +35,7 @@ public class TextDisplay_impl implements TextDisplay {
         this.calcNumber.setCurrentNum("0");
         this.calcNumber.setStoredNum(0);
         this.calcNumber.setIsInput(false);
+        this.calcNumber.setCalcResult(0);
         this.calcOperator.setOperator("");
     }
 
@@ -48,6 +49,11 @@ public class TextDisplay_impl implements TextDisplay {
 
     // method: update display.
     private void updateDisplay() {
+        String currentNum = calcNumber.getCurrentNum();
+        double cNum = Double.parseDouble(currentNum);
+        double storedNum = calcNumber.getStoredNum();
+        double calcResult = calcNumber.getCalcResult();
+        boolean isInput = calcNumber.getIsInput();
 
     }
 
