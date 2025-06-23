@@ -45,8 +45,8 @@ public class TextDisplay_impl implements TextDisplay {
      * wrap method: to use updateDisplay method.
      * **/
     @Override
-    public void callUpdateDisplay() {
-        updateDisplay();
+    public String callUpdateDisplay() {
+        return updateDisplay();
     }
 
     // method: update display.

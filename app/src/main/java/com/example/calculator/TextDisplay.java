@@ -8,5 +8,5 @@ public interface TextDisplay {
     void setTextDisplay(String textDisplay);
     void clearDisplay(); // method: clear display
     // wrap method
-    void callUpdateDisplay();
+    String callUpdateDisplay();
 }

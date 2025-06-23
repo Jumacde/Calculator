@@ -52,33 +52,47 @@ public class ButtonController_impl implements ButtonController {
             calcNumber.setStoredNum(0);
             calcOperator.setOperator("");
             calcNumber.setCalcResult(0);
-            textDisplay.setTextDisplay(currentNum);
-            return; 
-        }
-
-        // if only 0 is on the display, ignored the input 0 or 00 again.
-        if (currentNum.equals("0") && (num.equals("0") || (num.equals("00")))) {
+        } else if (currentNum.equals("0") && (num.equals("0") || num.equals("00"))) { // if only 0 is on the display, ignored the input 0 or 00 again.
             return;
-        }
-
-        // if the first input is 0, override the first input.
-        if (currentNum.equals("0")) {
+        } else if (currentNum.equals("0")) { // if the first input is 0, override the first input.
             calcNumber.setCurrentNum(num);
-        } else { // add new input.
+        } else {
             calcNumber.setCurrentNum(currentNum + num);
         }
-        calcNumber.setIsInput(true);
-        textDisplay.setTextDisplay(currentNum);
+        calcNumber.setIsInput(true); // any number is inputted.
+        textDisplay.setTextDisplay(textDisplay.callUpdateDisplay());
     }
 
     private void clickOperatorButton(String op){
+        String operator = calcOperator.getOperator();
+        boolean isInput = calcNumber.getIsInput();
+        String currentNum = calcNumber.getCurrentNum();
+        double cNum = Double.parseDouble(currentNum); // String currentNumber convert to double.
+        double calcResult = calcNumber.getCalcResult();
+
+        if (operator.isEmpty() || isInput) {
+            calcNumber.setStoredNum(cNum);
+            if (!operator.isEmpty() || isInput) {
+                calcNumber.callDoCalc(calcOperator);
+                calcNumber.setStoredNum(calcResult);
+            }
+        }
+        calcOperator.setOperator(op);
+        calcNumber.setCurrentNum("0");
+        calcNumber.setIsInput(false);
+        // show calculate step
+        textDisplay.setTextDisplay(textDisplay.callUpdateDisplay());
+    }
+
+    private void clickEqualsButton() {
+        // execute calculate
+        calcNumber.callDoCalc(calcOperator);
 
     }
 
-    private void clickEqualsButton() {}
-
     private void clickAcButton() {
         textDisplay.clearDisplay();
+        textDisplay.setTextDisplay(textDisplay.callUpdateDisplay());
     }
 
 }
