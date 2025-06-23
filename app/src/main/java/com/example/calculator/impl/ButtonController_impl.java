@@ -11,7 +11,6 @@ public class ButtonController_impl implements ButtonController {
     private final TextDisplay textDisplay;
 
     public ButtonController_impl(CalcNumber calcNumber, CalcOperator calcOperator, TextDisplay textDisplay) {
-
         this.calcNumber = calcNumber;
         this.calcOperator = calcOperator;
         this.textDisplay = textDisplay;
@@ -62,7 +61,14 @@ public class ButtonController_impl implements ButtonController {
             return;
         }
 
-
+        // if the first input is 0, override the first input.
+        if (currentNum.equals("0")) {
+            calcNumber.setCurrentNum(num);
+        } else { // add new input.
+            calcNumber.setCurrentNum(currentNum + num);
+        }
+        calcNumber.setIsInput(true);
+        textDisplay.setTextDisplay(currentNum);
     }
 
     private void clickOperatorButton(String op){
