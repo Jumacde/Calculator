@@ -57,10 +57,15 @@ public class CalcNumber_impl implements CalcNumber {
         doCalc(calcOperator);
     }
 
+    /**
+     * method: define the calculate-Rule and -result.
+     * @ Param: CalcOperator calcOperator
+     * - call the interface class calcOperator to use  String operator = calcOperator.getOperator()
+     * */
     private void doCalc(CalcOperator calcOperator) {
         String operator = calcOperator.getOperator();
         double cNum = Double.parseDouble(currentNum); // String currentNumber convert to double.
-        double calcResult;
+        double calcResult; // calculate result.
         setIsInput(true);
         if (operator.isEmpty()) {
             return;
