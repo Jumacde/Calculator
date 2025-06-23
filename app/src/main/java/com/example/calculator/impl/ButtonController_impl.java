@@ -37,6 +37,11 @@ public class ButtonController_impl implements ButtonController {
         clickAcButton();
     }
 
+    /**
+     * method: define the click function for number buttons
+     * @ Param: String num
+     * - set a any input number
+     * **/
     private void clickNumberButton(String num) {
         String operator = calcOperator.getOperator();
         boolean isInput = calcNumber.getIsInput();
