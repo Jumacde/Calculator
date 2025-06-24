@@ -50,12 +50,12 @@ public class ButtonController_impl implements ButtonController {
         if (operator.equals("=")) {
             calcNumber.setCurrentNum(num);
             calcNumber.setStoredNum(0);
-            calcOperator.setOperator("");
-            calcNumber.setCalcResult(0);
+            calcOperator.setOperator(""); // once clear the arithmetic operator.
+            calcNumber.setCalcResult(0); // once clear the calculate result.
         } else if (currentNum.equals("0") && (num.equals("0") || num.equals("00"))) { // if only 0 is on the display, ignored the input 0 or 00 again.
             return;
-        } else if (currentNum.equals("0")) { // if the first input is 0, override the first input.
-            calcNumber.setCurrentNum(num);
+        } else if (isInput == false) { // the first input number after a arithmetic operator.
+            calcNumber.setCurrentNum(num); // override currentNum if you have been input a arithmetic number.
         } else {
             calcNumber.setCurrentNum(currentNum + num);
         }
@@ -77,9 +77,8 @@ public class ButtonController_impl implements ButtonController {
                 calcNumber.setStoredNum(calcResult);
             }
         }
-        calcOperator.setOperator(op);
-        calcNumber.setCurrentNum("0");
-        calcNumber.setIsInput(false);
+        calcOperator.setOperator(op); // define inputted arithmetic operator.
+        calcNumber.setIsInput(false); // set input state "wait for next input numbers" after input arithmetic operator
         // show calculate step
         textDisplay.setTextDisplay(textDisplay.callUpdateDisplay());
     }
