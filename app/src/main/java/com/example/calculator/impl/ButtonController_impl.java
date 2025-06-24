@@ -5,6 +5,21 @@ import com.example.calculator.CalcNumber;
 import com.example.calculator.CalcOperator;
 import com.example.calculator.TextDisplay;
 
+/**
+ * class:
+ *      control each buttons function.
+ *      all private methods can used by calling wrap method(named call-).
+ * methods:
+ * - clickNumberButton: control numbers button(0-9 and 00).
+ *      1. allow input any number.
+ *      2. they allow input any number after input "=" too.
+ * - clickOperatorButton: control arithmetic operators button(+, -, *, /).
+ *      allow input any arithmetic operator.
+ * - clickEqualsButton: control the equals button(=).
+ *      get the calculate result.
+ * - clickAcButton: control the AC button.
+ *      clear the display.
+ * **/
 public class ButtonController_impl implements ButtonController {
     private final CalcNumber calcNumber;
     private final CalcOperator calcOperator;
@@ -52,6 +67,7 @@ public class ButtonController_impl implements ButtonController {
             calcNumber.setStoredNum(0);
             calcOperator.setOperator(""); // once clear the arithmetic operator.
             calcNumber.setCalcResult(0); // once clear the calculate result.
+
         } else if (currentNum.equals("0") && (num.equals("0") || num.equals("00"))) { // if only 0 is on the display, ignored the input 0 or 00 again.
             return;
         } else if (!isInput) { // the first input number after a arithmetic operator.
