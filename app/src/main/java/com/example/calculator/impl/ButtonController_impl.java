@@ -54,7 +54,7 @@ public class ButtonController_impl implements ButtonController {
             calcNumber.setCalcResult(0); // once clear the calculate result.
         } else if (currentNum.equals("0") && (num.equals("0") || num.equals("00"))) { // if only 0 is on the display, ignored the input 0 or 00 again.
             return;
-        } else if (isInput == false) { // the first input number after a arithmetic operator.
+        } else if (!isInput) { // the first input number after a arithmetic operator.
             calcNumber.setCurrentNum(num); // override currentNum if you have been input a arithmetic number.
         } else {
             calcNumber.setCurrentNum(currentNum + num);
@@ -72,7 +72,7 @@ public class ButtonController_impl implements ButtonController {
 
         if (operator.isEmpty() || isInput) {
             calcNumber.setStoredNum(cNum);
-            if (!operator.isEmpty() || isInput) {
+            if (!operator.isEmpty()) {
                 calcNumber.callDoCalc(calcOperator);
                 calcNumber.setStoredNum(calcResult);
             }
@@ -85,8 +85,16 @@ public class ButtonController_impl implements ButtonController {
 
     private void clickEqualsButton() {
         double calcResult = calcNumber.getCalcResult();
+        String currentNum = calcNumber.getCurrentNum();
+        double cNum = Double.parseDouble(currentNum);
+        String operator = calcOperator.getOperator();
 
-        calcNumber.callDoCalc(calcOperator); // execute calculate
+        if (!operator.isEmpty() && !operator.equals("=")) { // if min. a arithmetic operator and "=" are there.
+            calcNumber.callDoCalc(calcOperator); // execute calculate
+        } else {
+            calcNumber.setCalcResult(cNum);
+        }
+
         calcNumber.setCurrentNum(textDisplay.callFormatNumber(calcResult)); // the calculate result is stored in currentNum and show this on the display.
         calcNumber.setStoredNum(0); // reset stored number to next calculate.
         calcOperator.setOperator("="); // set the operator as "=".
