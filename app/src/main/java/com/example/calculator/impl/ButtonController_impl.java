@@ -54,7 +54,7 @@ public class ButtonController_impl implements ButtonController {
     /**
      * method: define the click function for number buttons
      * @ Param: String num
-     * - set a any input number
+     * - set to input any input number
      * **/
     private void clickNumberButton(String num) {
         String operator = calcOperator.getOperator();
@@ -78,6 +78,11 @@ public class ButtonController_impl implements ButtonController {
         textDisplay.setTextDisplay(textDisplay.callUpdateDisplay());
     }
 
+    /**
+     * method: define the click function for arithmetic operator buttons
+     * @ Param: String op
+     * - set to input any arithmetic operator
+     * **/
     private void clickOperatorButton(String op){
         String operator = calcOperator.getOperator();
         boolean isInput = calcNumber.getIsInput();
@@ -85,12 +90,12 @@ public class ButtonController_impl implements ButtonController {
         double cNum = Double.parseDouble(currentNum); // String currentNumber convert to double.
         double calcResult = calcNumber.getCalcResult();
 
-        if (operator.equals("=")) {
-            calcNumber.setStoredNum(calcResult);
-        } else if (operator.isEmpty() || isInput) {
-            calcNumber.setStoredNum(cNum);
+        if (operator.equals("=")) { // allow to calculate further input any number after input "=".
+            calcNumber.setStoredNum(calcResult); // store calculate result for next calculate.
+        } else if (operator.isEmpty() || isInput) { // input first number.
+            calcNumber.setStoredNum(cNum); // store inputted number.
             if (!operator.isEmpty()) {
-                calcNumber.callDoCalc(calcOperator);
+                calcNumber.callDoCalc(calcOperator); // calculate.
                 calcNumber.setStoredNum(calcResult);
             }
         }
@@ -100,6 +105,9 @@ public class ButtonController_impl implements ButtonController {
         textDisplay.setTextDisplay(textDisplay.callUpdateDisplay());
     }
 
+    /**
+     * method: define the click function for the "=" button.
+     * **/
     private void clickEqualsButton() {
         double calcResult = calcNumber.getCalcResult();
         String currentNum = calcNumber.getCurrentNum();
@@ -119,9 +127,12 @@ public class ButtonController_impl implements ButtonController {
         textDisplay.setTextDisplay(textDisplay.callUpdateDisplay()); // the calculate result shows on the display.
     }
 
+    /**
+     * method: define the click function for the AC button.
+     * **/
     private void clickAcButton() {
-        textDisplay.clearDisplay();
-        textDisplay.setTextDisplay(textDisplay.callUpdateDisplay());
+        textDisplay.clearDisplay(); // reset display.
+        textDisplay.setTextDisplay(textDisplay.callUpdateDisplay()); // show cleared display.
     }
 
 }
