@@ -5,6 +5,4 @@ public interface CalcOperator {
     String getOperator();
     // setter
     void setOperator(String operator);
-    // wrap method
-
 }

@@ -64,8 +64,8 @@ public class CalcNumber_impl implements CalcNumber {
 
     /**
      * wrap method
-     * @ Param: String operator
-     * - set a arithmetic operator(+, -, *, /)
+     * @ Param: CalcOperator calcOperator
+     * - call the interface class calcOperator.
      * **/
     @Override
     public void callDoCalc(CalcOperator calcOperator) {
