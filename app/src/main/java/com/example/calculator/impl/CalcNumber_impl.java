@@ -102,5 +102,4 @@ public class CalcNumber_impl implements CalcNumber {
             }
         }
     }
-
 }

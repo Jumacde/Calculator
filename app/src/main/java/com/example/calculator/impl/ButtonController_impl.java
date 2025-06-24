@@ -7,8 +7,9 @@ import com.example.calculator.TextDisplay;
 
 /**
  * class:
- *      control each buttons function.
- *      all private methods can used by calling wrap method(named call-).
+ *      - control each buttons function.
+ *      - all private methods can used by calling wrap method(named call-).
+ *      - all values from other classes is called as local value in each method, since they have to initialise at every phase.
  * methods:
  * - clickNumberButton: control numbers button(0-9 and 00).
  *      allow input any number.
