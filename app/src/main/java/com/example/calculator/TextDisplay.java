@@ -9,4 +9,5 @@ public interface TextDisplay {
     void clearDisplay(); // method: clear display
     // wrap method
     String callUpdateDisplay();
+    String callFormatNumber(double num);
 }

@@ -49,6 +49,16 @@ public class TextDisplay_impl implements TextDisplay {
         return updateDisplay();
     }
 
+    /**
+     * wrap method: to use updateDisplay method.
+     * @ Param: double num
+     * - to set a input number.
+     * **/
+    @Override
+    public String callFormatNumber(double num) {
+        return formatNumber(num);
+    }
+
     // method: update display.
     private String updateDisplay() {
         String currentNum = calcNumber.getCurrentNum();

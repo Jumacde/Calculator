@@ -84,9 +84,14 @@ public class ButtonController_impl implements ButtonController {
     }
 
     private void clickEqualsButton() {
-        // execute calculate
-        calcNumber.callDoCalc(calcOperator);
+        double calcResult = calcNumber.getCalcResult();
 
+        calcNumber.callDoCalc(calcOperator); // execute calculate
+        calcNumber.setCurrentNum(textDisplay.callFormatNumber(calcResult)); // the calculate result is stored in currentNum and show this on the display.
+        calcNumber.setStoredNum(0); // reset stored number to next calculate.
+        calcOperator.setOperator("="); // set the operator as "=".
+        calcNumber.setIsInput(false); // input state is false after showing on the display.
+        textDisplay.setTextDisplay(textDisplay.callUpdateDisplay()); // the calculate result shows on the display.
     }
 
     private void clickAcButton() {
