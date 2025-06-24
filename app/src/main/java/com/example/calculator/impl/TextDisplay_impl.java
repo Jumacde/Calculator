@@ -70,10 +70,12 @@ public class TextDisplay_impl implements TextDisplay {
 
         if (operator.equals("=")) { // show the calculate result on the display.
             return formatNumber(calcResult);
-        } else if (!operator.isEmpty() && isInput) {
-            return formatNumber(storedNum) + operator + formatNumber(cNum);
-        } else if (!operator.isEmpty() && !isInput) {
-            return formatNumber(storedNum) + operator;
+        } else if (!operator.isEmpty()) {
+            if (isInput) {
+                return formatNumber(storedNum) + operator + formatNumber(cNum);
+            } else {
+                return formatNumber(storedNum) + operator;
+            }
         } else {
             return formatNumber(cNum);
         }
