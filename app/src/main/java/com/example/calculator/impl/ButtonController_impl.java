@@ -97,6 +97,7 @@ public class ButtonController_impl implements ButtonController {
             calcNumber.setStoredNum(cNum); // store inputted number.
             if (!operator.isEmpty()) {
                 calcNumber.callDoCalc(calcOperator); // calculate.
+                calcNumber.setStoredNum(calcResult); // store calculate step in the storedNum in oder to add more arithmetic operator.
             }
         }
         calcOperator.setOperator(op); // define inputted arithmetic operator.
