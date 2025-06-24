@@ -11,10 +11,10 @@ import com.example.calculator.TextDisplay;
  *      all private methods can used by calling wrap method(named call-).
  * methods:
  * - clickNumberButton: control numbers button(0-9 and 00).
- *      1. allow input any number.
- *      2. they allow input any number after input "=" too.
+ *      allow input any number.
  * - clickOperatorButton: control arithmetic operators button(+, -, *, /).
- *      allow input any arithmetic operator.
+ *      1. allow input any arithmetic operator.
+ *      2. allow input any number after input "=".
  * - clickEqualsButton: control the equals button(=).
  *      get the calculate result.
  * - clickAcButton: control the AC button.
@@ -67,7 +67,6 @@ public class ButtonController_impl implements ButtonController {
             calcNumber.setStoredNum(0);
             calcOperator.setOperator(""); // once clear the arithmetic operator.
             calcNumber.setCalcResult(0); // once clear the calculate result.
-
         } else if (currentNum.equals("0") && (num.equals("0") || num.equals("00"))) { // if only 0 is on the display, ignored the input 0 or 00 again.
             return;
         } else if (!isInput) { // the first input number after a arithmetic operator.
@@ -86,7 +85,9 @@ public class ButtonController_impl implements ButtonController {
         double cNum = Double.parseDouble(currentNum); // String currentNumber convert to double.
         double calcResult = calcNumber.getCalcResult();
 
-        if (operator.isEmpty() || isInput) {
+        if (operator.equals("=")) {
+            calcNumber.setStoredNum(calcResult);
+        } else if (operator.isEmpty() || isInput) {
             calcNumber.setStoredNum(cNum);
             if (!operator.isEmpty()) {
                 calcNumber.callDoCalc(calcOperator);
