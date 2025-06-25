@@ -98,7 +98,8 @@ public class ButtonController_impl implements ButtonController {
             if (!operator.isEmpty()) {
                 calcNumber.callDoCalc(calcOperator); // calculate.
                 // get "new" calculate result.
-                calcNumber.setStoredNum(calcResult);
+                //calcNumber.setStoredNum(calcResult);
+                calcNumber.setStoredNum(calcNumber.getCalcResult());
             }
         }
         calcOperator.setOperator(op); // define inputted arithmetic operator.
