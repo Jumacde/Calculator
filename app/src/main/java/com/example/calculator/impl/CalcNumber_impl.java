@@ -89,14 +89,10 @@ public class CalcNumber_impl implements CalcNumber {
         } else if (operator.equals("-")) {
             calcResult = storedNum - cNum;
         } else if (operator.equals("*")) {
-            if (cNum == 0 || storedNum == 0) {
-                calcResult = 0;
-            } else {
-                calcResult = storedNum * cNum;
-            }
+            calcResult = storedNum * cNum;
         } else if (operator.equals("/")) {
-            if (cNum == 0 || storedNum == 0) {
-                calcResult = 0;
+            if (cNum == 0) {
+                calcResult = Double.POSITIVE_INFINITY;
             } else {
                 calcResult = storedNum / cNum;
             }

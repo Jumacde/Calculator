@@ -257,8 +257,8 @@
                 android:layout_margin="5dp"
                 android:padding="10dp"
                 android:textSize="30dp"
-                android:textColor="@color/X11DarkGray"
-                android:backgroundTint="@color/YankeesBlue"
+                android:textColor="@color/RipeMango"
+                android:backgroundTint="@color/JapaneseCarmine"
                 />
             <Button
                 android:id="@+id/plus"

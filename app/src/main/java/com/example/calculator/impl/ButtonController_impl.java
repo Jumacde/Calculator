@@ -55,7 +55,7 @@ public class ButtonController_impl implements ButtonController {
     /**
      * method: define the click function for number buttons
      * @ Param: String num
-     * - set to input any input number
+     * - set to input any number
      * **/
     private void clickNumberButton(String num) {
         String operator = calcOperator.getOperator();
@@ -97,7 +97,8 @@ public class ButtonController_impl implements ButtonController {
             calcNumber.setStoredNum(cNum); // store inputted number.
             if (!operator.isEmpty()) {
                 calcNumber.callDoCalc(calcOperator); // calculate.
-                calcNumber.setStoredNum(calcResult); // store calculate step in the storedNum in oder to add more arithmetic operator.
+                // get "new" calculate result.
+                calcNumber.setStoredNum(calcResult);
             }
         }
         calcOperator.setOperator(op); // define inputted arithmetic operator.
